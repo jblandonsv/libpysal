@@ -44,7 +44,9 @@ def setup_package():
 
     # get all file endings and copy whole file names without a file suffix
     # assumes nested directories are only down one level
-    example_data_files = set()
+    
+    # example_data_files = set()
+    """
     for i in os.listdir("libpysal/examples"):
         if i.endswith(("py", "pyc")):
             continue
@@ -57,7 +59,7 @@ def setup_package():
             glob_name = "examples/" + i + "/*"
 
         example_data_files.add(glob_name)
-
+    """
     setup(
         name="libpysal",
         version=versioneer.get_version(),
@@ -88,7 +90,7 @@ def setup_package():
             "Programming Language :: Python :: 3.9",
             "Programming Language :: Python :: 3.10",
         ],
-        package_data={"libpysal": list(example_data_files)},
+        # package_data={"libpysal": list(example_data_files)},
         install_requires=install_reqs,
         extras_require=extras_reqs,
         cmdclass=versioneer.get_cmdclass({"build_py": build_py}),
