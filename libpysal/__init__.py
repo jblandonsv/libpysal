@@ -23,7 +23,7 @@ weights
 from . import cg
 from . import io
 from . import weights
-from . import examples
+# from . import examples
 
 from . import _version
 
